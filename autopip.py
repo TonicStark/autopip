@@ -1,6 +1,7 @@
 # Importing Libraries
 from rich.console import Console
 import subprocess
+import shutil
 import sys
 import os
 
@@ -15,3 +16,14 @@ except IndexError:
     # Raising an Error Message
     console.print(
         "❌ [red]Error:[/red] you must use autopip [magenta]<.../to/project>[/magenta]!")
+
+# Performing OS Operations using the given Path
+
+# Saving the Venv Path to delete
+venv_path = os.path.join(PRJ_PATH, "venv")
+
+# Deleting the Venv
+try:
+    shutil.rmtree(venv_path)
+except FileNotFoundError:
+    pass
