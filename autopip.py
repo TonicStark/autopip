@@ -34,3 +34,16 @@ if os.path.exists(PRJ_PATH):
 
     # Creating a New Venv
     venv.create(venv_path)
+
+    # Storing the requirements.txt file
+    req_file = os.path.join(PRJ_PATH, "requirements.txt")
+
+    # Creating a list of unfiltered packages
+    unfiltered_packages = []
+
+    # Opening the file and appending each line to the list
+    with open(req_file, "r") as f:
+        unfiltered_packages = f.readlines()
+    
+    # Clearing the list
+    packages_list = [package.split("=")[0] for package in unfiltered_packages]
