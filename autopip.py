@@ -19,11 +19,14 @@ except IndexError:
 
 # Performing OS Operations using the given Path
 
-# Saving the Venv Path to delete
-venv_path = os.path.join(PRJ_PATH, "venv")
+# Check if the given Path exists:
+if os.path.exists(PRJ_PATH):
+    
+    # Saving the Venv Path to delete
+    venv_path = os.path.join(PRJ_PATH, "venv")
 
-# Deleting the Venv
-try:
-    shutil.rmtree(venv_path)
-except FileNotFoundError:
-    pass
+    # Deleting the Venv
+    try:
+        shutil.rmtree(venv_path)
+    except FileNotFoundError:
+        pass
