@@ -1,2 +1,5 @@
-/venv
+/build
+/dist
 /test
+/venv
+autopip.spec
