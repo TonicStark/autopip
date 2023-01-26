@@ -1,8 +1,6 @@
 # Importing Libraries
 from rich.console import Console
-import subprocess
 import shutil
-import venv
 import sys
 import os
 
@@ -33,16 +31,14 @@ if os.path.exists(PRJ_PATH):
         pass
 
     # Creating a New Venv
-    venv.create(venv_path)
-
-    # Storing the requirements.txt file
-    req_file = os.path.join(PRJ_PATH, "requirements.txt")
+    os.chdir(PRJ_PATH)
+    os.system("python -m venv venv")
 
     # Creating a list of unfiltered packages
     unfiltered_packages = []
 
     # Opening the file and appending each line to the list
-    with open(req_file, "r") as f:
+    with open("requirements.txt", "r") as f:
         unfiltered_packages = f.readlines()
     
     # Clearing the list
