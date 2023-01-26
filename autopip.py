@@ -43,3 +43,8 @@ if os.path.exists(PRJ_PATH):
     
     # Clearing the list
     packages_list = [package.split("=")[0] for package in unfiltered_packages]
+
+    # Installing the Packages in the New Environment
+    PIP = "venv\Scripts\pip.exe"
+    for pkg in packages_list:
+        os.system(f"{PIP} install {pkg}")
