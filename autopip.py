@@ -48,3 +48,6 @@ if os.path.exists(PRJ_PATH):
     PIP = "venv\Scripts\pip.exe"
     for pkg in packages_list:
         os.system(f"{PIP} install {pkg}")
+
+    # Freezing new Packages' Version
+    os.system(f"{PIP} freeze > requirements.txt")
