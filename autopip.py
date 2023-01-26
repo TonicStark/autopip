@@ -16,6 +16,9 @@ except IndexError:
     console.print(
         "❌ [red]Error:[/red] you must use autopip [magenta]<.../to/project>[/magenta]!")
 
+    # Terminating the Program
+    sys.exit(1)
+
 # Performing OS Operations using the given Path
 
 # Saving the Venv Path to delete
