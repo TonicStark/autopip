@@ -37,6 +37,10 @@ if os.path.exists(PRJ_PATH):
     os.chdir(PRJ_PATH)
     os.system("python -m venv venv")
 
+    # Update PIP in the New Venv
+    py = "venv\Scripts\python.exe"
+    os.system(f"{py} -m pip install --upgrade pip")
+
     # Creating a list of unfiltered packages
     unfiltered_packages = []
 
